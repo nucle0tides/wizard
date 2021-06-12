@@ -1,0 +1,40 @@
+// https://codepen.io/braydoncoyer/pen/yLyrWOq
+ul {
+    all: unset;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 300px;
+    & li {
+        position: relative;
+        list-style: none;
+        text-align: center;
+        margin: 15px;
+        label {
+            position: relative;
+            cursor: pointer;
+            input[type="checkbox"] {
+                position: absolute;
+                opacity: 0;
+            }
+
+            & :checked ~ div {
+                background-color: teal;
+                color: white;
+            }
+
+            div {
+                width: 60px;
+                height: 30px;
+                background: #ebf5fc;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 40px;
+                font-size: 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+.stepContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.stepButtons {
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

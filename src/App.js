@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import MainForm from './MainForm';
 
 function App() {

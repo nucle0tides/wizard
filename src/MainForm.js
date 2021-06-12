@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import Step from './Step';
+import './MainForm.scss';
 
-const options = ['dog', 'cat', 'fish', 'rabbit'];
+const options = ['dog', 'cat', 'fish', 'rabbit', 'crab', 'bird'];
 const LIKE = 'like';
 const DISLIKE = 'dislike';
 
-const MainForm = ({}) => {
+const MainForm = () => {
     const [step, setStep] = useState(1);
     const [values, setValues] = useState({
         [LIKE]: options.reduce((acc, val) => {
@@ -63,18 +64,20 @@ const MainForm = ({}) => {
 
     return (
         <>
-          <form onSubmit={() => { alert(JSON.stringify(values)); }}>
-            {steps()}
-            <div>
-              {step > 1 && (
-                  <button onClick={prev}>Previous</button>
-              )}
-              {step < 2 && (
-                  <button onClick={next}>Next</button>
-              )}
-              {step === 2 && (
-                  <button type="submit">Submit</button>
-              )}
+          <form onSubmit={(e) => { e.preventDefault(); console.log(values); }}>
+            <div className="stepContainer">
+              {steps()}
+              <div className="stepButtons">
+                {step > 1 && (
+                    <button onClick={prev}>Previous</button>
+                )}
+                {step < 2 && (
+                    <button onClick={next}>Next</button>
+                )}
+                {step === 2 && (
+                    <button type="submit">Submit</button>
+                )}
+              </div>
             </div>
           </form>
         </>
